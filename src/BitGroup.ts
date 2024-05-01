@@ -33,6 +33,11 @@ export default class BitGroup {
     return this.bits;
   }
 
+  public getBit(i: number): Bit {
+    if (i < 0) i += this.l;
+    return this.bits[i];
+  }
+
   public subGroup(i: number, j: number): BitGroup {
     if (j > 1) throw new Error("i must be <= j");
     return new BitGroup(this.bits.slice(this.l - j, this.l - i));
@@ -48,7 +53,7 @@ export default class BitGroup {
     const binaryString = this.toBinString();
     const paddedBinaryString = binaryString.padStart(
       Math.ceil(binaryString.length / 4) * 4,
-      "0"
+      "0",
     );
     const hexString = parseInt(paddedBinaryString, 2)
       .toString(16)

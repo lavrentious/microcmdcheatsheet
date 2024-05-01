@@ -4,7 +4,7 @@ import Bit from "./Bit";
 import "./bit.css";
 import BitElement from "./BitElement";
 import BitGroup from "./BitGroup";
-import { tooltips } from "./bitTooltips";
+import { cmcTooltips, omcTooltips } from "./bitTooltips";
 import TooltipsList from "./TooltipsList";
 import {} from "./utils";
 
@@ -22,6 +22,7 @@ const App = () => {
 
   const binInputRef = useRef<HTMLInputElement>(null);
   const hexInputRef = useRef<HTMLInputElement>(null);
+  const tooltips = bits.current.getBit(0).asBool() ? cmcTooltips : omcTooltips;
 
   return (
     <>
