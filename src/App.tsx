@@ -67,7 +67,12 @@ const App = () => {
       </div>
       <hr style={{ margin: "50px 0" }} />
       <form
-        style={{ fontSize: 24 }}
+        style={{
+          fontSize: 24,
+          display: "flex",
+          justifyContent: "space-evenly",
+          flexWrap: "wrap",
+        }}
         onSubmit={(e) => {
           e.preventDefault();
           rerender();
@@ -75,30 +80,36 @@ const App = () => {
           hexInputRef.current?.blur();
         }}
       >
-        <input
-          ref={binInputRef}
-          style={{ fontFamily: "monospace", width: "100%", fontSize: 18 }}
-          value={binString}
-          onChange={(e) => setBinString(e.target.value)}
-          onBlur={(e) => {
-            bits.current.setBinString(e.target.value);
-            setBinString(bits.current.toBinString(true));
-            setHexString(bits.current.toHexString());
-            rerender();
-          }}
-        />
-        <input
-          ref={hexInputRef}
-          style={{ fontFamily: "monospace", width: "100%", fontSize: 18 }}
-          value={hexString}
-          onChange={(e) => setHexString(e.target.value)}
-          onBlur={(e) => {
-            bits.current.setHexString(e.target.value);
-            setBinString(bits.current.toBinString(true));
-            setHexString(bits.current.toHexString());
-            rerender();
-          }}
-        />
+        <label>
+          bin
+          <input
+            ref={binInputRef}
+            style={{ fontFamily: "monospace", width: "35rem", fontSize: 18 }}
+            value={binString}
+            onChange={(e) => setBinString(e.target.value)}
+            onBlur={(e) => {
+              bits.current.setBinString(e.target.value);
+              setBinString(bits.current.toBinString(true));
+              setHexString(bits.current.toHexString());
+              rerender();
+            }}
+          />
+        </label>
+        <label>
+          hex
+          <input
+            ref={hexInputRef}
+            style={{ fontFamily: "monospace", width: "10rem", fontSize: 18 }}
+            value={hexString}
+            onChange={(e) => setHexString(e.target.value)}
+            onBlur={(e) => {
+              bits.current.setHexString(e.target.value);
+              setBinString(bits.current.toBinString(true));
+              setHexString(bits.current.toHexString());
+              rerender();
+            }}
+          />
+        </label>
         <input type="submit" hidden />
       </form>
       <hr style={{ margin: "50px 0" }} />
