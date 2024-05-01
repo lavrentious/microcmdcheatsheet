@@ -7,12 +7,15 @@ interface TooltipsListProps {
   bits: boolean[];
 }
 
-const TooltipsListItem: React.FC<{ tooltip: Tooltip; active: boolean }> = ({
-  tooltip,
-  active,
-}) => {
+const TooltipsListItem: React.FC<
+  { tooltip: Tooltip; active: boolean } & React.ComponentPropsWithRef<"tr">
+> = ({ tooltip, active, ...props }) => {
   return (
-    <tr className={clsx({ active: active })}>
+    <tr
+      className={clsx({ active: active, ...[props.className] })}
+      key={tooltip.bit + tooltip.mnemonic}
+      {...props}
+    >
       <td>{tooltip.bit}</td>
       <td>{tooltip.mnemonic}</td>
       <td>{tooltip.comment}</td>
@@ -24,13 +27,19 @@ const TooltipsList: React.FC<TooltipsListProps> = ({ tooltips, bits }) => {
   return (
     <table className="tooltips-table">
       <thead>
-        <th>Номер бита</th>
-        <th>Мнемоника</th>
-        <th>Комментарий</th>
+        <tr>
+          <th>Номер бита</th>
+          <th>Мнемоника</th>
+          <th>Комментарий</th>
+        </tr>
       </thead>
       <tbody>
         {tooltips.map((tooltip) => (
-          <TooltipsListItem tooltip={tooltip} active={bits[tooltip.bit]} />
+          <TooltipsListItem
+            tooltip={tooltip}
+            active={bits[tooltip.bit]}
+            key={tooltip.bit + tooltip.mnemonic}
+          />
         ))}
       </tbody>
     </table>

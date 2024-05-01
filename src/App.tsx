@@ -1,4 +1,4 @@
-import { useReducer, useRef, useState } from "react";
+import React, { useReducer, useRef, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import Bit from "./Bit";
 import "./bit.css";
@@ -28,7 +28,7 @@ const App = () => {
     <>
       <div className="bit-container">
         {bits.current.getBits().map((bit, i) => (
-          <>
+          <React.Fragment key={"bit" + i}>
             <div style={{ display: "block" }}>
               <div
                 style={{
@@ -42,7 +42,6 @@ const App = () => {
               </div>
               <BitElement
                 bit={bit}
-                key={"bit" + i}
                 data-tooltip-id={`bit-${40 - i - 1}-tooltip`}
                 data-tooltip-content={`${tooltips[40 - i - 1].bit} ${
                   tooltips[40 - i - 1].mnemonic
@@ -62,7 +61,7 @@ const App = () => {
             ) : (
               <></>
             )}
-          </>
+          </React.Fragment>
         ))}
       </div>
       <hr style={{ margin: "50px 0" }} />
@@ -120,6 +119,7 @@ const App = () => {
       {tooltips.map((tooltip) => (
         <Tooltip
           id={`bit-${tooltip.bit}-tooltip`}
+          key={`bit-${tooltip.bit}-tooltip`}
           style={{ fontFamily: "monospace" }}
         />
       ))}
