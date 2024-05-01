@@ -33,6 +33,10 @@ export default class BitGroup {
     return this.bits;
   }
 
+  public getBitsDirect(): Bit[] {
+    return this.bits.slice().reverse();
+  }
+
   public getBit(i: number): Bit {
     if (i < 0) i += this.l;
     return this.bits[i];

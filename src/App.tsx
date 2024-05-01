@@ -104,7 +104,7 @@ const App = () => {
       <hr style={{ margin: "50px 0" }} />
       <TooltipsList
         tooltips={tooltips}
-        bits={bits.current.getBits().map((b) => b.asBool())}
+        bits={bits.current.getBitsDirect().map((b) => b.asBool())}
       />
       {tooltips.map((tooltip) => (
         <Tooltip
