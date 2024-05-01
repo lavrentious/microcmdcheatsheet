@@ -1,0 +1,19 @@
+.bit-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.bit-element {
+  text-align: center;
+  border: gray solid 2px;
+  width: 25px;
+  height: 25px;
+  margin: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-family: monospace;
+}
