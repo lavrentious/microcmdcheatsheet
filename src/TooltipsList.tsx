@@ -1,13 +1,18 @@
+import clsx from "clsx";
 import React from "react";
 import { Tooltip } from "./bitTooltips";
 import "./tooltipsTable.css";
 interface TooltipsListProps {
   tooltips: Tooltip[];
+  bits: boolean[];
 }
 
-const TooltipsListItem: React.FC<{ tooltip: Tooltip }> = ({ tooltip }) => {
+const TooltipsListItem: React.FC<{ tooltip: Tooltip; active: boolean }> = ({
+  tooltip,
+  active,
+}) => {
   return (
-    <tr>
+    <tr className={clsx({ active: active })}>
       <td>{tooltip.bit}</td>
       <td>{tooltip.mnemonic}</td>
       <td>{tooltip.comment}</td>
@@ -15,7 +20,7 @@ const TooltipsListItem: React.FC<{ tooltip: Tooltip }> = ({ tooltip }) => {
   );
 };
 
-const TooltipsList: React.FC<TooltipsListProps> = ({ tooltips }) => {
+const TooltipsList: React.FC<TooltipsListProps> = ({ tooltips, bits }) => {
   return (
     <table className="tooltips-table">
       <thead>
@@ -25,7 +30,7 @@ const TooltipsList: React.FC<TooltipsListProps> = ({ tooltips }) => {
       </thead>
       <tbody>
         {tooltips.map((tooltip) => (
-          <TooltipsListItem tooltip={tooltip} />
+          <TooltipsListItem tooltip={tooltip} active={bits[tooltip.bit]} />
         ))}
       </tbody>
     </table>

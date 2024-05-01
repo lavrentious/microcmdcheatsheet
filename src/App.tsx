@@ -102,7 +102,10 @@ const App = () => {
         <input type="submit" hidden />
       </form>
       <hr style={{ margin: "50px 0" }} />
-      <TooltipsList tooltips={tooltips} />
+      <TooltipsList
+        tooltips={tooltips}
+        bits={bits.current.getBits().map((b) => b.asBool())}
+      />
       {tooltips.map((tooltip) => (
         <Tooltip
           id={`bit-${tooltip.bit}-tooltip`}

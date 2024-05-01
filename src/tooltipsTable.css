@@ -9,3 +9,7 @@
 .tooltips-table td {
   border: 1px solid grey;
 }
+
+.active {
+  background-color: #88ff88;
+}
