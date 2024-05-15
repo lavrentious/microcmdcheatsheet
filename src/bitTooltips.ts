@@ -6,13 +6,13 @@ export type Tooltip = {
 
 // operational micro commands (bit 39 = 0)
 export const omcTooltips: Tooltip[] = [
-  { bit: 0, mnemonic: "RDDR", comment: "DR(PД) -> правый вход АЛУ" },
-  { bit: 1, mnemonic: "RDCR", comment: "CR(PK) -> правый вход АЛУ" },
-  { bit: 2, mnemonic: "RDIP", comment: "IP(CK) -> правый вход АЛУ" },
-  { bit: 3, mnemonic: "RDSP", comment: "SP(YC) -> правый вход АЛУ" },
-  { bit: 4, mnemonic: "RDAC", comment: "АС(А) -> левый вход АЛУ" },
-  { bit: 5, mnemonic: "RDBR", comment: "ВR(БР) -> левый вход АЛУ" },
-  { bit: 6, mnemonic: "RDPS", comment: "PS(PC) -> левый вход АЛУ" },
+  { bit: 0, mnemonic: "RDDR", comment: "DR -> правый вход АЛУ" },
+  { bit: 1, mnemonic: "RDCR", comment: "CR -> правый вход АЛУ" },
+  { bit: 2, mnemonic: "RDIP", comment: "IP -> правый вход АЛУ" },
+  { bit: 3, mnemonic: "RDSP", comment: "SP -> правый вход АЛУ" },
+  { bit: 4, mnemonic: "RDAC", comment: "AC -> левый вход АЛУ" },
+  { bit: 5, mnemonic: "RDBR", comment: "BR -> левый вход АЛУ" },
+  { bit: 6, mnemonic: "RDPS", comment: "PS -> левый вход АЛУ" },
   { bit: 7, mnemonic: "RDIR", comment: "KR(KP) -> левый вход АЛУ" },
   { bit: 8, mnemonic: "COMR", comment: "Обратный код правого входа АЛУ" },
   { bit: 9, mnemonic: "COML", comment: "Обратный код левого входа АЛУ" },
@@ -51,7 +51,7 @@ export const omcTooltips: Tooltip[] = [
   {
     bit: 20,
     mnemonic: "SHRF",
-    comment: "Переключатель сдвига вправо (для иклического сдвига 15 разряд )",
+    comment: "Переключатель сдвига вправо (для циклического сдвига 15 разряд)",
   },
   { bit: 21, mnemonic: "SETC", comment: "Установка C" },
   { bit: 22, mnemonic: "SETV", comment: "Установка V" },
@@ -71,7 +71,7 @@ export const omcTooltips: Tooltip[] = [
   { bit: 36, mnemonic: "-", comment: "Зарезервирован" },
   { bit: 37, mnemonic: "-", comment: "Зарезервирован" },
   { bit: 38, mnemonic: "HALT", comment: "Останов" },
-  { bit: 39, mnemonic: "ТУРЕ", comment: "Бит выбора ОМК/УМК" },
+  { bit: 39, mnemonic: "TYPE", comment: "Бит выбора ОМК/УМК" },
 ];
 
 // control micro commands (bit 39 = 1)
