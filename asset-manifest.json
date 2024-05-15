@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/microcmdcheatsheet/static/css/main.557d03a5.css",
-    "main.js": "/microcmdcheatsheet/static/js/main.844d72c4.js",
-    "index.html": "/microcmdcheatsheet/index.html",
-    "main.557d03a5.css.map": "/microcmdcheatsheet/static/css/main.557d03a5.css.map",
-    "main.844d72c4.js.map": "/microcmdcheatsheet/static/js/main.844d72c4.js.map"
+    "main.css": "./static/css/main.557d03a5.css",
+    "main.js": "./static/js/main.bf4d19cd.js",
+    "index.html": "./index.html",
+    "main.557d03a5.css.map": "./static/css/main.557d03a5.css.map",
+    "main.bf4d19cd.js.map": "./static/js/main.bf4d19cd.js.map"
   },
   "entrypoints": [
     "static/css/main.557d03a5.css",
-    "static/js/main.844d72c4.js"
+    "static/js/main.bf4d19cd.js"
   ]
 }
