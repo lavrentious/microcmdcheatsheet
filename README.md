@@ -6,6 +6,7 @@
   <img src="assets/preview.jpeg" alt="screenshot" style="width: 50%"/>
 </p>
 
+Потыкать можно тут https://lavrentious.github.io/microcmdcheatsheet
 
 ## Запуск
 Локально через NodeJS
