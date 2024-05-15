@@ -34,7 +34,7 @@ const TooltipsList: React.FC<TooltipsListProps> = ({ tooltips, bits }) => {
         </tr>
       </thead>
       <tbody>
-        {tooltips.map((tooltip) => (
+        {tooltips.slice().reverse().map((tooltip) => (
           <TooltipsListItem
             tooltip={tooltip}
             active={bits[tooltip.bit]}
