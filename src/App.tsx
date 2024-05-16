@@ -5,6 +5,7 @@ import "./bit.css";
 import BitElement from "./BitElement";
 import BitGroup from "./BitGroup";
 import { cmcTooltips, omcTooltips } from "./bitTooltips";
+import Footer from "./Footer";
 import TooltipsList from "./TooltipsList";
 import {} from "./utils";
 
@@ -123,6 +124,7 @@ const App = () => {
           style={{ fontFamily: "monospace" }}
         />
       ))}
+      <Footer />
     </>
   );
 };
